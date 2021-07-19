@@ -3,12 +3,13 @@ import React from 'react';
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
 
 const CartItem = ({ item }) => {
 
   // const [, dispatch] = useStoreContext();
-  const state = useSelector(state => state);
+  
   const dispatch = useDispatch();
 
   const removeFromCart = item => {
@@ -36,7 +37,6 @@ const CartItem = ({ item }) => {
         purchaseQuantity: parseInt(value)
       });
       idbPromise('cart', 'put', { ...item, purchaseQuantity: parseInt(value) });
-
     }
   }
 
