@@ -1,4 +1,5 @@
 {
+  "homepage": "http://jayeebee.github.io/redux-store",
   "name": "mern-shopping",
   "version": "1.0.0",
   "description": "",
@@ -10,7 +11,9 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "heroku-postbuild": "cd client && npm run build",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\""
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +26,7 @@
     "rimraf": "^3.0.2"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.1.0",
+    "gh-pages": "^3.2.3"
   }
 }
